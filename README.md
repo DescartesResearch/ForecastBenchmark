@@ -13,3 +13,31 @@ For unknown reasons, install_gitub does not work under all Windows versions. The
 
 `install.packages("remotes")` <br />
 `remotes::install_url(url="https://github.com/DescartesResearch/ForecastBenchmark/archive/master.zip", INSTALL_opt= "--no-multiarch")`
+
+## Getting Started
+For using the ForecastBenchmark, the type of the evaluation have to be choosen
+* one (one-step-ahead forecast), 
+* multi (multi-step-ahead forecast), or
+* rolling (rolling-origin forecast), 
+
+the use case have to be choosen 
+* economics, 
+* finance, 
+* human, or 
+* nature,
+
+and the forecasting method needs to apply the following interface
+* ts (a time series object) as input, 
+* h (a number representing the horizon) as input, and
+* returns the forecast either as vector or time series object.
+
+### Example Usage
+`library(ForecastBenchmark)` <br />
+`benchmark(forecaster,usecase="nature",type="rolling")`
+
+### Example Forecasting Method
+`forecaster <- function(ts,h){` <br />
+`  model <- ets(ts)` <br />
+`  values <- forecast(model,h)$mean` <br />
+`  return(values)` <br />
+`}`
