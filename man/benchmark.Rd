@@ -30,7 +30,10 @@ The performance of the forecasting method in comparison with state-of-the-art me
 Automatically evaluates and ranks forecasting methods based on their performance.
 }
 \examples{
+# Example usage
 benchmark(forecaster,usecase="economics",type="one")
+
+# Example forecasting method
 forecaster <- function(ts,h){ return(forecast(ets(ts), h = h)$mean) }
 }
 \author{
