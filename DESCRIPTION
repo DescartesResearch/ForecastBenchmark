@@ -1,0 +1,13 @@
+Package: ForecastBenchmark
+Type: Package
+Title: Libra: A Benchmark for Time Series Forecasting Methods
+Version: 0.1.0
+Author: Andre Bauer <andre.bauer@uni-wuerzburg.de>
+Maintainer: Andre Bauer <andre.bauer@uni-wuerzburg.de>
+Description: Libra, a forecasting benchmark, automatically evaluates and ranks forecasting methods based on their performance in a diverse set of evaluation scenarios. The benchmark comprises four different use cases, each covering 100 heterogeneous time series taken from different domains.
+License: GNU General Public License v3.0
+Encoding: UTF-8
+LazyData: true
+Depends: 
+    forecast (>= 8.5)
+RoxygenNote: 7.1.0
