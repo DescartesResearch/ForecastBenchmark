@@ -1,6 +1,6 @@
 # ForecastBenchmark
 
-Libra, a forecasting benchmark, automatically evaluates and ranks forecasting methods based on their performance in a diverse set of evaluation scenarios. The benchmark comprises four different use cases, each covering 100 heterogeneous time series taken from different domains. 
+Libra, a forecasting benchmark, automatically evaluates and ranks forecasting methods based on their performance in a diverse set of evaluation scenarios. The benchmark comprises four different use cases, each covering 100 heterogeneous [time series](http://doi.org/10.5281/zenodo.4399959) taken from different domains. 
 
 
 ## Installation
