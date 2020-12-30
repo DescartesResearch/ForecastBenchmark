@@ -27,16 +27,18 @@ remotes::install_url(url="https://github.com/DescartesResearch/ForecastBenchmark
 ```
 
 ## Getting Started
-For using the ForecastBenchmark, the type of the evaluation have to be choosen
-* one (one-step-ahead forecast), 
-* multi (multi-step-ahead forecast), or
-* rolling (rolling-origin forecast), 
+In order to evaluate and rank forecasting methods in an automatic manner, the user have to specify how and for which use case the forecasting method in question should be evaluated.
 
-the use case have to be choosen 
-* economics, 
-* finance, 
-* human, or 
-* nature,
+The "how" is specified by the type of the evaluation. Here, the user have to choose between
+* one (one-step-ahead forecast, i.e., forecasting only the last value), 
+* multi (multi-step-ahead forecast, i.e., forecasting several values at once), and
+* rolling (rolling-origin forecast, i.e., the time series equivalent of cross-validation).  
+
+Moreover, the benchmark offers four different use cases. Here, the user have to choose between
+* economics (gas, sales, unemployment, etc.), 
+* finance (stocks, sales prices, exchange rate, etc.),
+* human (calls, SMS, Internet, etc.), and
+* nature (rain, birth, death, etc.). 
 
 and the forecasting method needs to apply the following interface
 * ts (a time series object) as input, 
