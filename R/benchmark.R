@@ -52,31 +52,55 @@ benchmark <- function(forecaster, usecase, type = "one", output="benchmark.csv",
   # Adds performance of state-of-the-art methods
   switch(type,
          "one" = {
-           time.val <- c(mean(results[,1]), colMeans(benchmark.one.time[ind,]))
-           smape.val <- c(mean(results[,2]), colMeans(benchmark.one.smape[ind,]))
-           mase.val <- c(mean(results[,3]), colMeans(benchmark.one.mase[ind,]))
-           mues.val <- c(mean(results[,4]), colMeans(benchmark.one.mues[ind,]))
-           moes.val <- c(mean(results[,5]), colMeans(benchmark.one.moes[ind,]))
-           muas.val <- c(mean(results[,6]), colMeans(benchmark.one.muas[ind,]))
-           moas.val <- c(mean(results[,7]), colMeans(benchmark.one.moas[ind,]))
+           time.mean <- c(mean(results[,1]), colMeans(benchmark.one.time[ind,]))
+           smape.mean <- c(mean(results[,2]), colMeans(benchmark.one.smape[ind,]))
+           mase.mean <- c(mean(results[,3]), colMeans(benchmark.one.mase[ind,]))
+           mues.mean <- c(mean(results[,4]), colMeans(benchmark.one.mues[ind,]))
+           moes.mean <- c(mean(results[,5]), colMeans(benchmark.one.moes[ind,]))
+           muas.mean <- c(mean(results[,6]), colMeans(benchmark.one.muas[ind,]))
+           moas.mean <- c(mean(results[,7]), colMeans(benchmark.one.moas[ind,]))
+
+           time.sd <- c(sd(results[,1]), apply(benchmark.one.time[ind,], 2, sd))
+           smape.sd <- c(sd(results[,2]), apply(benchmark.one.smape[ind,], 2, sd))
+           mase.sd <- c(sd(results[,3]), apply(benchmark.one.mase[ind,], 2, sd))
+           mues.sd <- c(sd(results[,4]), apply(benchmark.one.mues[ind,], 2, sd))
+           moes.sd <- c(sd(results[,5]), apply(benchmark.one.moes[ind,], 2, sd))
+           muas.sd <- c(sd(results[,6]), apply(benchmark.one.muas[ind,], 2, sd))
+           moas.sd <- c(sd(results[,7]), apply(benchmark.one.moas[ind,], 2, sd))
          },
          "multi" = {
-           time.val <- c(mean(results[,1]), colMeans(benchmark.multi.time[ind,]))
-           smape.val <- c(mean(results[,2]), colMeans(benchmark.multi.smape[ind,]))
-           mase.val <- c(mean(results[,3]), colMeans(benchmark.multi.mase[ind,]))
-           mues.val <- c(mean(results[,4]), colMeans(benchmark.multi.mues[ind,]))
-           moes.val <- c(mean(results[,5]), colMeans(benchmark.multi.moes[ind,]))
-           muas.val <- c(mean(results[,6]), colMeans(benchmark.multi.muas[ind,]))
-           moas.val <- c(mean(results[,7]), colMeans(benchmark.multi.moas[ind,]))
+           time.mean <- c(mean(results[,1]), colMeans(benchmark.multi.time[ind,]))
+           smape.mean <- c(mean(results[,2]), colMeans(benchmark.multi.smape[ind,]))
+           mase.mean <- c(mean(results[,3]), colMeans(benchmark.multi.mase[ind,]))
+           mues.mean <- c(mean(results[,4]), colMeans(benchmark.multi.mues[ind,]))
+           moes.mean <- c(mean(results[,5]), colMeans(benchmark.multi.moes[ind,]))
+           muas.mean <- c(mean(results[,6]), colMeans(benchmark.multi.muas[ind,]))
+           moas.mean <- c(mean(results[,7]), colMeans(benchmark.multi.moas[ind,]))
+
+           time.sd <- c(sd(results[,1]), apply(benchmark.multi.time[ind,], 2, sd))
+           smape.sd <- c(sd(results[,2]), apply(benchmark.multi.smape[ind,], 2, sd))
+           mase.sd <- c(sd(results[,3]), apply(benchmark.multi.mase[ind,], 2, sd))
+           mues.sd <- c(sd(results[,4]), apply(benchmark.multi.mues[ind,], 2, sd))
+           moes.sd <- c(sd(results[,5]), apply(benchmark.multi.moes[ind,], 2, sd))
+           muas.sd <- c(sd(results[,6]), apply(benchmark.multi.muas[ind,], 2, sd))
+           moas.sd <- c(sd(results[,7]), apply(benchmark.multi.moas[ind,], 2, sd))
          },
          "rolling" = {
-           time.val <- c(mean(results[,1]), colMeans(benchmark.rolling.time[ind,]))
-           smape.val <- c(mean(results[,2]), colMeans(benchmark.rolling.smape[ind,]))
-           mase.val <- c(mean(results[,3]), colMeans(benchmark.rolling.mase[ind,]))
-           mues.val <- c(mean(results[,4]), colMeans(benchmark.rolling.mues[ind,]))
-           moes.val <- c(mean(results[,5]), colMeans(benchmark.rolling.moes[ind,]))
-           muas.val <- c(mean(results[,6]), colMeans(benchmark.rolling.muas[ind,]))
-           moas.val <- c(mean(results[,7]), colMeans(benchmark.rolling.moas[ind,]))
+           time.mean <- c(mean(results[,1]), colMeans(benchmark.rolling.time[ind,]))
+           smape.mean <- c(mean(results[,2]), colMeans(benchmark.rolling.smape[ind,]))
+           mase.mean <- c(mean(results[,3]), colMeans(benchmark.rolling.mase[ind,]))
+           mues.mean <- c(mean(results[,4]), colMeans(benchmark.rolling.mues[ind,]))
+           moes.mean <- c(mean(results[,5]), colMeans(benchmark.rolling.moes[ind,]))
+           muas.mean <- c(mean(results[,6]), colMeans(benchmark.rolling.muas[ind,]))
+           moas.mean <- c(mean(results[,7]), colMeans(benchmark.rolling.moas[ind,]))
+
+           time.sd <- c(sd(results[,1]), apply(benchmark.rolling.time[ind,], 2, sd))
+           smape.sd <- c(sd(results[,2]), apply(benchmark.rolling.smape[ind,], 2, sd))
+           mase.sd <- c(sd(results[,3]), apply(benchmark.rolling.mase[ind,], 2, sd))
+           mues.sd <- c(sd(results[,4]), apply(benchmark.rolling.mues[ind,], 2, sd))
+           moes.sd <- c(sd(results[,5]), apply(benchmark.rolling.moes[ind,], 2, sd))
+           muas.sd <- c(sd(results[,6]), apply(benchmark.rolling.muas[ind,], 2, sd))
+           moas.sd <- c(sd(results[,7]), apply(benchmark.rolling.moas[ind,], 2, sd))
          }
   )
 
@@ -86,40 +110,72 @@ benchmark <- function(forecaster, usecase, type = "one", output="benchmark.csv",
                "Random Forest", "SVR", "XGBoost")
 
   # Prints the different performance measures
-  names(time.val) <- methods
-  print("## Normalized Time")
-  print(time.val)
+  names(time.mean) <- methods
+  print("## Avg. Normalized Time")
+  print(time.mean)
 
-  names(smape.val) <- methods
-  print("## Symmetrical Mean Absolute Percentage Error")
-  print(smape.val)
+  names(time.sd) <- methods
+  print("## SD. Normalized Time")
+  print(time.sd)
 
-  names(mase.val) <- methods
-  print("## Mean Absolute Scaled Error")
-  print(mase.val)
+  names(smape.mean) <- methods
+  print("## Avg. Symmetrical Mean Absolute Percentage Error")
+  print(smape.mean)
 
-  names(mues.val) <- methods
-  print("## Mean Under-Estimation Share")
-  print(mues.val)
+  names(smape.sd) <- methods
+  print("## SD. Symmetrical Mean Absolute Percentage Error")
+  print(smape.sd)
 
-  names(moes.val) <- methods
-  print("## Mean Over-Estimation Share")
-  print(moes.val)
+  names(mase.mean) <- methods
+  print("## Avg. Mean Absolute Scaled Error")
+  print(mase.mean)
 
-  names(muas.val) <- methods
-  print("## Mean Under-Accuracy Share")
-  print(muas.val)
+  names(mase.sd) <- methods
+  print("## SD. Mean Absolute Scaled Error")
+  print(mase.sd)
 
-  names(moas.val) <- methods
-  print("## Mean Over-Accuracy Share")
-  print(moas.val)
+  names(mues.mean) <- methods
+  print("## Avg. Mean Under-Estimation Share")
+  print(mues.mean)
+
+  names(mues.sd) <- methods
+  print("## SD. Mean Under-Estimation Share")
+  print(mues.sd)
+
+  names(moes.mean) <- methods
+  print("## Avg. Mean Over-Estimation Share")
+  print(moes.mean)
+
+  names(moes.sd) <- methods
+  print("## SD. Mean Over-Estimation Share")
+  print(moes.sd)
+
+  names(muas.mean) <- methods
+  print("## Avg. Mean Under-Accuracy Share")
+  print(muas.mean)
+
+  names(muas.sd) <- methods
+  print("## SD. Mean Under-Accuracy Share")
+  print(muas.sd)
+
+  names(moas.mean) <- methods
+  print("## Avg. Mean Over-Accuracy Share")
+  print(moas.mean)
+
+  names(moas.sd) <- methods
+  print("## SD. Mean Over-Accuracy Share")
+  print(moas.sd)
 
   # Prepares the output
-  result <- rbind(time.val, smape.val, mase.val, mues.val, moes.val, muas.val, moas.val)
-  rownames(result) <- c("Normalized Time", "Symmetrical Mean Absolute Percentage Error",
-                        "Mean Absolute Scaled Error", "Mean Under-Estimation Share",
-                        "Mean Over-Estimation Share", "Mean Under-Accuracy Share",
-                        "Mean Over-Accuracy Share")
+  result <- rbind(time.mean, time.sd, smape.mean, smape.sd, mase.mean, mase.sd, mues.mean, mues.sd,
+                  moes.mean, moes.sd, muas.mean, muas.sd, moas.mean, moas.sd)
+  rownames(result) <- c("Avg. Normalized Time", "SD. Normalized Time",
+                        "Avg. Symmetrical Mean Absolute Percentage Error", "SD. Symmetrical Mean Absolute Percentage Error",
+                        "Avg. Mean Absolute Scaled Error", "SD. Mean Absolute Scaled Error",
+                        "Avg. Mean Under-Estimation Share", "SD. Mean Under-Estimation Share",
+                        "Avg. Mean Over-Estimation Share", "SD. Mean Over-Estimation Share",
+                        "Avg. Mean Under-Accuracy Share", "SD. Mean Under-Accuracy Share",
+                        "Avg. Mean Over-Accuracy Share", "SD. Mean Over-Accuracy Share")
 
   # Writes benchmarking results
   write.table(result,file=output,sep = ";", col.names=NA)
