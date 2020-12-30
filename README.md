@@ -1,6 +1,8 @@
 # ForecastBenchmark
 
-Libra, a forecasting benchmark, automatically evaluates and ranks forecasting methods based on their performance in a diverse set of evaluation scenarios. The benchmark comprises four different use cases, each covering 100 heterogeneous [time series](http://doi.org/10.5281/zenodo.4399959) taken from different domains. 
+Libra, a forecasting benchmark, automatically evaluates and ranks forecasting methods based on their performance in a diverse set of evaluation scenarios. The benchmark comprises four different use cases, each covering 100 heterogeneous time series taken from different domains. 
+
+The assembled data set for this benchmark comprising 400 time series is publicly availabe at [Zenodo](http://doi.org/10.5281/zenodo.4399959).
 
 
 ## Installation
@@ -11,7 +13,7 @@ install.packages("devtools")
 devtools::install_github("DescartesResearch/ForecastBenchmark") 
 ``` 
 
-For unknown reasons, install_gitub does not work under all Windows versions. Therefore the package can alternatively be installed in R with the following commands:
+For unknown reasons, install_github does not work under all Windows versions. Therefore the package can alternatively be installed in R with the following commands:
 
 ```
 install.packages("remotes")
