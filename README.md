@@ -6,13 +6,19 @@ The assembled data set for this benchmark comprising 400 time series is publicly
 
 
 ## Installation
-This package can be installed in R by using the following commands:
+
+### Requirements
+In order to use and install this R package, ensure that R (≥ 3.2) is installed.
+
+### Installation via devtools
+This package can be installed in R by using the package devtools and the following commands:
 
 ```
 install.packages("devtools") 
 devtools::install_github("DescartesResearch/ForecastBenchmark") 
 ``` 
 
+### Alternative Installation via remotes
 For unknown reasons, install_github does not work under all Windows versions. Therefore the package can alternatively be installed in R with the following commands:
 
 ```
