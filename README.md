@@ -2,7 +2,7 @@
 
 Libra, a forecasting benchmark, automatically evaluates and ranks forecasting methods based on their performance in a diverse set of evaluation scenarios. The benchmark comprises four different use cases, each covering 100 heterogeneous time series taken from different domains. 
 
-The assembled data set for this benchmark comprising 400 time series is publicly availabe at [Zenodo](http://doi.org/10.5281/zenodo.4399959).
+The assembled dataset for this benchmark, which includes 400 time series, is incorporated in this package and is additionally publicly available at [Zenodo](http://doi.org/10.5281/zenodo.4399959).
 
 
 ## Installation
