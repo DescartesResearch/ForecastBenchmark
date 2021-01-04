@@ -2,7 +2,7 @@
 
 Libra, a forecasting benchmark, automatically evaluates and ranks forecasting methods based on their performance in a diverse set of evaluation scenarios. The benchmark comprises four different use cases, each covering 100 heterogeneous time series taken from different domains. 
 
-A live demo for running the benchmark is hosted at [CodeOcean](https://doi.org/10.24433/CO.3240518.v1). 
+A live-demo for using the benchmark is hosted at [CodeOcean](https://doi.org/10.24433/CO.3240518.v1). 
 
 The assembled dataset for this benchmark, which includes 400 time series, is incorporated in this package and is additionally publicly available at [Zenodo](http://doi.org/10.5281/zenodo.4399959).
 
@@ -30,7 +30,7 @@ remotes::install_url(url="https://github.com/DescartesResearch/ForecastBenchmark
 ```
 
 ## Getting Started
-In order to evaluate and rank forecasting methods in an automatic manner, the user have to specify how and for which use case the forecasting method in question should be evaluated.
+In order to evaluate and rank forecasting methods in an automatic manner, the user have to specify how and for which use case the forecasting method in question should be evaluated. An live-demo of running the benchmark is available at [CodeOcean](https://doi.org/10.24433/CO.3240518.v1).
 
 ### Example Usage
 An example code to execute the ForecastBenchmark is depicted in the following:
