@@ -6,7 +6,20 @@ A live-demo for using the benchmark is hosted at [CodeOcean](https://doi.org/10.
 
 The assembled dataset for this benchmark, which includes 400 time series, is incorporated in this package and is additionally publicly available at [Zenodo](http://doi.org/10.5281/zenodo.4399959).
 
+## Cite Us
 
+The TeaStore was first published in Proceedings of the 12th ACM/SPEC International Conference on Performance Engineering (ICPE '21). If you use the forecast benchmark please cite the following publication:
+
+    @inproceedings{bauer2021benchmark,
+      author = {Andr{\'e} Bauer and Marwin Z{\"u}fle Simon Eismann and Johannes Grohmann and Nikolas Herbst and Samuel Kounev},
+      title = {{Libra: A Benchmark for Time Series Forecasting Methods}},
+      booktitle = {Proceedings of the 12th ACM/SPEC International Conference on Performance Engineering},
+      series = {ICPE '21},
+      year = {2021},
+      month = {April},
+      location = {{Rennes, France}},
+    }
+    
 ## Installation
 In the following, we describe the requirements of and installation steps of the package. 
 
