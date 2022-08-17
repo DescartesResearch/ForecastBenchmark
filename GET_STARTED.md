@@ -33,7 +33,7 @@ The inputs and output for this benchmark are described in the next sections.
 
 ## Inputs
 
-In the following the essential inputs are explained. Optional parameters are explained in the [Documentation](DOCUMENTATION.md). 
+In the following the essential inputs are explained. Optional parameters are explained in the [Documentation](DOCUMENTATION.md#inputs-and-parameters). 
 
 ### Forecasting Method
 
@@ -66,7 +66,7 @@ The benchmark offers four different use cases for with the method can be evaluat
 * human (calls, web requests, batch requests, etc.), and
 * nature (rain, birth, death, etc.).
 
-A more detailed describtion of the use cases can be found in the [Documentation](DOCUMENTATION.md). 
+A more detailed describtion of the use cases can be found in the [Documentation](DOCUMENTATION.md#use-cases). 
 
 ### Evaluation Type
 The "how to forecasting method should be evaluated" is specified by the type of the evaluation. Here, the user have to choose between
@@ -76,12 +76,12 @@ The "how to forecasting method should be evaluated" is specified by the type of 
 
 ## Output
 The benchmark returns the seven meaures (each average and stand deviation) to quantify the forecasting method. In addition, the benchmark also gives these measures for state-of-the-art methods that have already been benchmarked and saved. The considered measures are:
-*Normalized Time: The normalized time-to-result. Normalization is performed using a naive forecasting method executed in the background.
-*Symmetrical Mean Absolute Percentage Error: A percentage based accuracy measure of the forecast.
-*Mean Absolute Scaled Error: An accuracy measure of the forecast that is scaled by a baseline.
-*Mean Under-Estimation Share: The percentage of forecast values that underestimate the actual values.
-*Mean Over-Estimation Share: The percentage of forecast values that overestimate the actual values.
-*Mean Under-Accuracy Share: The accuracy in terms of underestimation the actual values.
-*Mean Over-Accuracy Share: The accuracy in terms of overestimation the actual values.
+* Normalized Time: The normalized time-to-result. Normalization is performed using a naive forecasting method executed in the background.
+* Symmetrical Mean Absolute Percentage Error: A percentage based accuracy measure of the forecast.
+* Mean Absolute Scaled Error: An accuracy measure of the forecast that is scaled by a baseline.
+* Mean Under-Estimation Share: The percentage of forecast values that underestimate the actual values.
+* Mean Over-Estimation Share: The percentage of forecast values that overestimate the actual values.
+* Mean Under-Accuracy Share: The accuracy in terms of underestimation the actual values.
+* Mean Over-Accuracy Share: The accuracy in terms of overestimation the actual values.
 
-The mathematical definitions of the measures can be found in the [Documentation](DOCUMENTATION.md). 
+The mathematical definitions of the measures can be found in the [Documentation](DOCUMENTATION.md#measures). 

@@ -9,7 +9,8 @@ benchmark(
   usecase,
   type = "one",
   output = "benchmark.csv",
-  name = "Benchmarked Method"
+  name = "Benchmarked Method",
+  reportAll = TRUE
 )
 }
 \arguments{
@@ -19,9 +20,11 @@ benchmark(
 
 \item{type}{Optional parameter: The evaluation type. It must be either one (one-step-ahead forecast), multi (multi-step-ahead forecast), or rolling (rolling-origin forecast). one by default.}
 
-\item{output}{Optional parameter: The name of the output file. benchmark.csv by default.}
+\item{output}{Optional parameter: The name of the output file with the structure Folder/subfolder/file. benchmark.csv by default.}
 
 \item{name}{Optional parameter: The name of the forecasting method. Benchmarked Method by default.}
+
+\item{reportAll}{Optional parameter: Whether to report the results of the state-of-the-art methods already benchmarked. TRUE by default.}
 }
 \value{
 The performance of the forecasting method in comparison with state-of-the-art methods.
