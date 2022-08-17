@@ -6,8 +6,9 @@
 #' @param forecaster The forecasting method. This method gets a timeseries objekt (ts) and the horizon (h). The method returns the forecast values.
 #' @param usecase The use case for the benchmark. It must be either economics, finance, human, or nature.
 #' @param type Optional parameter: The evaluation type. It must be either one (one-step-ahead forecast), multi (multi-step-ahead forecast), or rolling (rolling-origin forecast). one by default.
-#' @param output Optional parameter: The name of the output file. benchmark.csv by default.
+#' @param output Optional parameter: The name of the output file with the structure Folder/subfolder/file. benchmark.csv by default.
 #' @param name Optional parameter: The name of the forecasting method. Benchmarked Method by default.
+#' @param reportAll Optional parameter: Whether to report the results of the state-of-the-art methods already benchmarked. TRUE by default.
 #' @return The performance of the forecasting method in comparison with state-of-the-art methods.
 #' @examples
 #' # Example usage
@@ -16,7 +17,16 @@
 #' # Example forecasting method
 #' forecaster <- function(ts,h){ return(forecast(ets(ts), h = h)$mean) }
 #' @export
-benchmark <- function(forecaster, usecase, type = "one", output="benchmark.csv", name="Benchmarked Method"){
+benchmark <- function(forecaster, usecase, type = "one", output="benchmark.csv", name="Benchmarked Method", reportAll=TRUE){
+  # Checks if folder exists
+  if(grepl("/",output)){
+    split <- tail(unlist(gregexpr('/', output)),1)
+    folder <- substr(output,1,split)
+    if(!dir.exists(folder)){
+      stop(paste("The folder", folder, "does not exist"))
+    }
+  }
+  
   # Gives feedback about input
   print(paste("Selected use case is '", usecase, "'", sep=""))
   print(paste("Selected evaluation type is '", type, "'", sep=""))
@@ -104,7 +114,10 @@ benchmark <- function(forecaster, usecase, type = "one", output="benchmark.csv",
          }
   )
 
-
+  ind <- 1
+  if(reportAll){
+    ind <- 10
+  }
 
   methods <- c(name, "ETS", "sARIMA", "sNaive", "TBATS", "Theta", "GPyTorch", "NNetar",
                "Random Forest", "SVR", "XGBoost")
@@ -112,59 +125,59 @@ benchmark <- function(forecaster, usecase, type = "one", output="benchmark.csv",
   # Prints the different performance measures
   names(time.mean) <- methods
   print("## Avg. Normalized Time")
-  print(time.mean)
+  print(time.mean[1:ind])
 
   names(time.sd) <- methods
   print("## SD. Normalized Time")
-  print(time.sd)
+  print(time.sd[1:ind])
 
   names(smape.mean) <- methods
   print("## Avg. Symmetrical Mean Absolute Percentage Error")
-  print(smape.mean)
+  print(smape.mean[1:ind])
 
   names(smape.sd) <- methods
   print("## SD. Symmetrical Mean Absolute Percentage Error")
-  print(smape.sd)
+  print(smape.sd[1:ind])
 
   names(mase.mean) <- methods
   print("## Avg. Mean Absolute Scaled Error")
-  print(mase.mean)
+  print(mase.mean[1:ind])
 
   names(mase.sd) <- methods
   print("## SD. Mean Absolute Scaled Error")
-  print(mase.sd)
+  print(mase.sd[1:ind])
 
   names(mues.mean) <- methods
   print("## Avg. Mean Under-Estimation Share")
-  print(mues.mean)
+  print(mues.mean[1:ind])
 
   names(mues.sd) <- methods
   print("## SD. Mean Under-Estimation Share")
-  print(mues.sd)
+  print(mues.sd[1:ind])
 
   names(moes.mean) <- methods
   print("## Avg. Mean Over-Estimation Share")
-  print(moes.mean)
+  print(moes.mean[1:ind])
 
   names(moes.sd) <- methods
   print("## SD. Mean Over-Estimation Share")
-  print(moes.sd)
+  print(moes.sd[1:ind])
 
   names(muas.mean) <- methods
   print("## Avg. Mean Under-Accuracy Share")
-  print(muas.mean)
+  print(muas.mean[1:ind])
 
   names(muas.sd) <- methods
   print("## SD. Mean Under-Accuracy Share")
-  print(muas.sd)
+  print(muas.sd[1:ind])
 
   names(moas.mean) <- methods
   print("## Avg. Mean Over-Accuracy Share")
-  print(moas.mean)
+  print(moas.mean[1:ind])
 
   names(moas.sd) <- methods
   print("## SD. Mean Over-Accuracy Share")
-  print(moas.sd)
+  print(moas.sd[1:ind])
 
   # Prepares the output
   result <- rbind(time.mean, time.sd, smape.mean, smape.sd, mase.mean, mase.sd, mues.mean, mues.sd,
@@ -178,6 +191,6 @@ benchmark <- function(forecaster, usecase, type = "one", output="benchmark.csv",
                         "Avg. Mean Over-Accuracy Share", "SD. Mean Over-Accuracy Share")
 
   # Writes benchmarking results
-  write.table(result,file=output,sep = ";", col.names=NA)
+  write.table(result[,1:ind,drop=F],file=output,sep = ";", col.names=NA)
 
 }
