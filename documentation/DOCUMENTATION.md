@@ -35,6 +35,6 @@ The time series are additionally publicly available at [Zenodo](http://doi.org/1
 
 ### Distribution of the Time Series Lenghts
 
-![alt text](length_distribution.pdf?raw=true)
+![alt text](length_distribution.png?raw=true)
 
 ## Measures
