@@ -28,7 +28,7 @@ Then, the forecasting method performs a forecast, which afterwards gets submitte
 The benchmark calculates the sMAPE, the MASE, and four other measures based on the input and forecasting method. 
 Besides the forecasting accuracy, the forecast also records the required time for each forecast. 
 To have a comparable time-to-result, the benchmark performs a forecast with sNaïve beforehand. 
-After each forecast, a report is created that contains an overview and ranking compared to the state-of-the-art methods. 
+After each forecast, a report is created that contains an overview and compared to the state-of-the-art methods. 
 It also lists the average and the standard deviation of the gathered measures. 
 The incorporated comparison of state-of-the-art methods include ETS, NNetar, random forest, sARIMA, sNaïve, SVR, TBATS, Theta, and XGBoost. 
 Their results were conducted prior to the use of the benchmark and were saved within the benchmark.
