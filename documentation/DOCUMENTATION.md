@@ -25,5 +25,16 @@ The forecasting method. This method gets a timeseries objekt (ts) and the horizo
 * reportAll: Optional parameter: Whether to report the results of the state-of-the-art methods already benchmarked. TRUE by default.
 
 ## Use Cases
+The benchmark comprises four different use cases with each 100 time series: 
+* economics (gas, sales, unemployment, etc.), 
+* finance (stocks, sales prices, exchange rate, etc.),
+* human (calls, web requests, batch requests, etc.), and
+* nature (rain, birth, death, etc.).
+
+The time series are additionally publicly available at [Zenodo](http://doi.org/10.5281/zenodo.4399959).
+
+### Distribution of the Time Series Lenghts
+
+![alt text](length_distribution.pdf?raw=true)
 
 ## Measures
