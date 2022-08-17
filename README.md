@@ -8,7 +8,7 @@ The assembled dataset for this benchmark, which includes 400 time series, is inc
 
 Check out our [Getting Started Guide](GET_STARTED.md) for information on how to use the Libra.
 
-## Quick Example Usage
+## Quick Example
 An example code to execute the ForecastBenchmark is depicted in the following:
 ```
 library(ForecastBenchmark)
