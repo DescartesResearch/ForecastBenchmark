@@ -17,21 +17,21 @@ In the following, we describe the requirements of and installation steps of the 
 ### Requirements
 In order to use and install this R package, ensure that R (≥ 3.2) is installed.
 
-### Installation via devtools
+### Installation via remotes
 This package can be installed in R by using the package devtools and the following commands:
-
-```
-install.packages("devtools") 
-devtools::install_github("DescartesResearch/ForecastBenchmark") 
-``` 
-
-### Alternative Installation via remotes
-For unknown reasons, install_github does not work under all Windows versions. Therefore the package can alternatively be installed in R with the following commands:
 
 ```
 install.packages("remotes")
 remotes::install_url(url="https://github.com/DescartesResearch/ForecastBenchmark/archive/master.zip", INSTALL_opt= "--no-multiarch")
 ```
+
+### Installation via devtools
+Alternatevly, this package can be installed in R by using the package devtools and the following commands:
+
+```
+install.packages("devtools") 
+devtools::install_github("DescartesResearch/ForecastBenchmark") 
+``` 
 
 ## Getting Started
 In order to evaluate and rank forecasting methods in an automatic manner, the user have to specify how and for which use case the forecasting method in question should be evaluated. An live-demo of running the benchmark is available at [CodeOcean](https://doi.org/10.24433/CO.3240518.v1).
