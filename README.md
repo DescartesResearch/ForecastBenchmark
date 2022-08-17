@@ -22,7 +22,7 @@ forecaster <- function(ts,h){
 benchmark(forecaster,usecase="economics",type="one")
 ```
 
-The installation process, requirements, and options for this benchmark are described in the [Getting Started Guide](GET_STARTED.md). A more detailed describtion can be found in the [Documentation](documentation/DOCUMENTATION.md).
+The installation process, requirements, and options for this benchmark are described in the [Getting Started Guide](GET_STARTED.md). A more detailed documentation can be found in the [Documentation](documentation/DOCUMENTATION.md).
 
 ## Cite Us
 
