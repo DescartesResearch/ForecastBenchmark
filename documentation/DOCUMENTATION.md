@@ -57,7 +57,7 @@ The time-to-result of the forecasting method is measured and then normalized. No
 
 ### Symmetrical Mean Absolute Percentage Error
 A percentage based accuracy measure of the forecast. Mathematically,
-$200% \over k sum_{t=1}^k |y_t - f_t| \over |y_t + f_t|$
+$200 \over k sum_{t=1}^k |y_t - f_t| \over |y_t + f_t|$
 
 ### Mean Absolute Scaled Error
 An accuracy measure of the forecast that is scaled by a baseline.
