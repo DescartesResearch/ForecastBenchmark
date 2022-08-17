@@ -33,7 +33,7 @@ The inputs and output for this benchmark are described in the next sections.
 
 ## Inputs
 
-In the following the essential inputs are explained. Optional parameters are explained in the [Documentation](DOCUMENTATION.md#inputs-and-parameters). 
+In the following the essential inputs are explained. Optional parameters are explained in the [Documentation](documentation/DOCUMENTATION.md#inputs-and-parameters). 
 
 ### Forecasting Method
 
@@ -66,7 +66,7 @@ The benchmark offers four different use cases for with the method can be evaluat
 * human (calls, web requests, batch requests, etc.), and
 * nature (rain, birth, death, etc.).
 
-A more detailed describtion of the use cases can be found in the [Documentation](DOCUMENTATION.md#use-cases). 
+A more detailed describtion of the use cases can be found in the [Documentation](documentation/DOCUMENTATION.md#use-cases). 
 
 ### Evaluation Type
 The "how to forecasting method should be evaluated" is specified by the type of the evaluation. Here, the user have to choose between
@@ -84,4 +84,4 @@ The benchmark returns the seven meaures (each average and stand deviation) to qu
 * Mean Under-Accuracy Share: The accuracy in terms of underestimation the actual values.
 * Mean Over-Accuracy Share: The accuracy in terms of overestimation the actual values.
 
-The mathematical definitions of the measures can be found in the [Documentation](DOCUMENTATION.md#measures). 
+The mathematical definitions of the measures can be found in the [Documentation](documentation/DOCUMENTATION.md#measures). 
