@@ -57,16 +57,34 @@ The time-to-result of the forecasting method is measured and then normalized. No
 
 ### Symmetrical Mean Absolute Percentage Error
 A percentage based accuracy measure of the forecast. Mathematically,
-$\frac{100\%}{k} \sum_{t=1}^{k} \frac{\lvert y_t - \hat{y}_t \rvert}{\lvert y_t \rvert}$
+$$SMAPE = \frac{100\%}{k} \sum_{t=1}^k \frac{\lvert y_t - \hat{y}_t \rvert}{\lvert y_t \rvert},$$
+where $k$ is the forecast horizon, $y_t$ the actual value at time $t$, and $\hat{y}_t$ the forecast value at time $t$.
 
 ### Mean Absolute Scaled Error
-An accuracy measure of the forecast that is scaled by a baseline.
+An accuracy measure of the forecast that is scaled by a baseline. Mathematically,
+$$MASE = \frac{100\%}{k} \sum_{t=1}^k \frac{\lvert y_t - \hat{y}_t \rvert}{b},$$ 
+
+with 
+
+$$b = \frac{1}{n-m}\sum_{i=m+1}^{n} \lvert h_i - h_{i-m}\rvert,$$
+where $k$ is the forecast horizon, $y_t$ the actual value at time $t$, $\hat{y}_t$ the forecast value at time $t$, $m$ the length of the period ($m = 1$ for non-seasonal time series), $n$ the length of the history, and $h_i$ the historical values at time $i$. 
+
 ### Mean Under-Estimation Share
- The percentage of forecast values that underestimate the actual values.
+The percentage of forecast values that underestimate the actual values. Mathematically,
+$$\rho_U := \frac{1}{k} \cdot \sum_{t=1}^k max(sgn(y_t - \hat{y_t}),0),$$
+where $k$ is the forecast horizon (i.e., the length of the forecast), $y_t$ the actual value at time $t$, and $\hat{y_t}$ the forecast value at time $t$.
+ 
 ### Mean Over-Estimation Share
- The percentage of forecast values that overestimate the actual values.
+The percentage of forecast values that overestimate the actual values. Mathematically,
+$$\rho_O := \frac{1}{k} \cdot \sum_{t=1}^k max(sgn(\hat{y_t} - y_t),0),$$
+where $k$ is the forecast horizon (i.e., the length of the forecast), $y_t$ the actual value at time $t$, and $\hat{y_t}$ the forecast value at time $t$.
+ 
 ### Mean Under-Accuracy Share
- The accuracy in terms of underestimation the actual values.
+The accuracy in terms of underestimation the actual values. Mathematically,
+$$\delta_U :=  \frac{1}{k \cdot \rho_U} \cdot \sum_{t=1}^k \frac{max(y_t - \hat{y_t},0)}{\lvert y_t \rvert} $$
+if there are forecast values that underestimate the actual values, otherwiese 0. In this equation, $k$ is the forecast horizon (i.e., the length of the forecast), $y_t$ the actual value at time $t$, and $\hat{y_t}$ the forecast value at time $t$.
 
 ### Mean Over-Accuracy Share
-The accuracy in terms of overestimation the actual values.
+The accuracy in terms of overestimation the actual values. . Mathematically,
+$$\frac{1}{k \cdot \rho_O} \cdot \sum_{t=1}^k \frac{max(\hat{y_t} - y_t,0)}{\lvert y_t \rvert}$$
+if there are forecast values that underestimate the actual values, otherwiese 0. In this equation, $k$ is the forecast horizon (i.e., the length of the forecast), $y_t$ the actual value at time $t$, and $\hat{y_t}$ the forecast value at time $t$.
