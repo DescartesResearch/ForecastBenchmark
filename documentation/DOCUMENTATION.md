@@ -1,5 +1,9 @@
 # Documentation
 
+## Sequence Diagram of Libra
+
+![alt text](sequence_diagram.png?raw=true)
+
 ## Inputs and Parameters
 In the following, we describe inputs and parameters of the benchmark.
 
@@ -33,8 +37,36 @@ The benchmark comprises four different use cases with each 100 time series:
 
 The time series are additionally publicly available at [Zenodo](http://doi.org/10.5281/zenodo.4399959).
 
-### Distribution of the Time Series Lenghts
+### Distribution of the Time Series Lenghts in each Use Case
 
 ![alt text](length_distribution.png?raw=true)
 
+### Distribution of the Time Series Frequencies in each Use Case
+
+![alt text](frequency_distribution.png?raw=true)
+
+### Relationship between Time Series Length and Frequency in each Use Case
+
+![alt text](frequency_length.png?raw=true)
+
 ## Measures
+The benchmark report the performance of the forecasting method based on seven measures.
+
+### Normalized Time
+The time-to-result of the forecasting method is measured and then normalized. Normalization is performed using a naive forecasting method executed in the background.
+
+### Symmetrical Mean Absolute Percentage Error
+A percentage based accuracy measure of the forecast. Mathematically,
+$200% \over k sum_{t=1}^k |y_t - f_t| \over |y_t + f_t|$
+
+### Mean Absolute Scaled Error
+An accuracy measure of the forecast that is scaled by a baseline.
+### Mean Under-Estimation Share
+ The percentage of forecast values that underestimate the actual values.
+### Mean Over-Estimation Share
+ The percentage of forecast values that overestimate the actual values.
+### Mean Under-Accuracy Share
+ The accuracy in terms of underestimation the actual values.
+
+### Mean Over-Accuracy Share
+The accuracy in terms of overestimation the actual values.
